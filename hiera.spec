@@ -11,7 +11,7 @@
 
 Name:           hiera
 Version:        1.0.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A simple hierarchical database supporting plugin data sources
 
 Group:          System Environment/Base
@@ -29,9 +29,9 @@ BuildRequires:  rubygem(mocha)
 %endif
 BuildRequires:  ruby-devel
 %if 0%{?el5}%{?el6}%{?fc16}
-Requires:       ruby(abi) >= 1.8
+Requires:       ruby(abi) = 1.8
 %else
-Requires:       ruby(abi) >= 1.9.3
+Requires:       ruby(abi) = 1.9.1
 %endif
 
 %description
@@ -74,6 +74,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Mon Oct 1 2012 Steve Traylen <steve.traylen@cern.ch> - 1.0.0-3
+- Correct ruby(abi) requirement.
+
 * Thu Sep 27 2012 Steve Traylen <steve.traylen@cern.ch> - 1.0.0-2
 - Remove _isa tag for f18 from ruby-devel?
 
