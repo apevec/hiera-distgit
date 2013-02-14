@@ -11,7 +11,7 @@
 
 Name:           hiera
 Version:        1.0.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        A simple hierarchical database supporting plugin data sources
 
 Group:          System Environment/Base
@@ -74,6 +74,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.0-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
+
 * Mon Oct 1 2012 Steve Traylen <steve.traylen@cern.ch> - 1.0.0-3
 - Correct ruby(abi) requirement.
 
