@@ -11,7 +11,7 @@
 
 Name:           hiera
 Version:        1.0.0
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        A simple hierarchical database supporting plugin data sources
 
 Group:          System Environment/Base
@@ -24,14 +24,18 @@ Source1:        hiera.yaml
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 %if 0%{?with_checks}
-BuildRequires:  rubygem(rspec-core)
+BuildRequires:  rubygem(rspec)
 BuildRequires:  rubygem(mocha)
 %endif
 BuildRequires:  ruby-devel
 %if 0%{?el5}%{?el6}%{?fc16}
 Requires:       ruby(abi) = 1.8
 %else
+%if 0%{?fedora} >= 19
+Requires:       ruby(release)
+%else
 Requires:       ruby(abi) = 1.9.1
+%endif
 %endif
 
 %description
@@ -74,6 +78,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Fri Mar 15 2013 Vít Ondruch <vondruch@redhat.com> - 1.0.0-5
+- Rebuild for https://fedoraproject.org/wiki/Features/Ruby_2.0.0
+
 * Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.0-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
