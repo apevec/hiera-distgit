@@ -10,17 +10,14 @@
 %endif
 
 Name:           hiera
-Version:        1.0.0
-Release:        6%{?dist}
+Version:        1.2.1
+Release:        1%{?dist}
 Summary:        A simple hierarchical database supporting plugin data sources
 
 Group:          System Environment/Base
 License:        ASL 2.0
 URL:            http://projects.puppetlabs.com/projects/%{name}/
 Source0:        http://downloads.puppetlabs.com/hiera/%{name}-%{version}.tar.gz
-# We use a copy of misreleased 'newer' version of 1.0.0
-# http://projects.puppetlabs.com/issues/16621
-Source1:        hiera.yaml
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 %if 0%{?with_checks}
@@ -43,7 +40,6 @@ A simple hierarchical database supporting plugin data sources.
 
 %prep
 %setup -q
-cp -p %{SOURCE1} hiera.yaml
 
 %build
 # Nothing to build
@@ -56,7 +52,7 @@ mkdir -p %{buildroot}%{_bindir}
 cp -pr lib/hiera %{buildroot}%{ruby_vendorlibdir} 
 cp -pr lib/hiera.rb %{buildroot}%{ruby_vendorlibdir} 
 install -p -m0755 bin/hiera %{buildroot}%{_bindir}
-install -p -m0644 hiera.yaml %{buildroot}%{_sysconfdir}
+install -p -m0644 ext/hiera.yaml %{buildroot}%{_sysconfdir}
 mkdir -p %{buildroot}%{_var}/lib/hiera
 
 %check
@@ -74,10 +70,13 @@ rm -rf %{buildroot}
 %{ruby_vendorlibdir}/hiera
 %dir %{_var}/lib/hiera
 %config(noreplace) %{_sysconfdir}/hiera.yaml
-%doc CHANGELOG COPYING README.md LICENSE
+%doc COPYING README.md LICENSE
 
 
 %changelog
+* Mon Sep 16 2013 Steve Traylen <steve.traylen@cern.ch> - 1.2.1-1
+- New version 1.2.1
+
 * Sat Aug 03 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.0-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
 
