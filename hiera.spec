@@ -1,9 +1,9 @@
-%if 0%{?el5}%{?el6}%{?fc16}
+%if 0%{?el5}%{?el6}
 %{!?ruby_vendorlibdir: %global ruby_vendorlibdir /usr/lib/ruby/site_ruby/1.8}
 %endif
 
 #rspec seems broken(?) in epel5 and6, todo.
-%if 0%{?el5}%{?el6}
+%if 0%{?el5}%{?el6} || 0%{?rhel} >= 7
 %global with_checks 0
 %else
 %global with_checks 1
