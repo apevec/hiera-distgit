@@ -25,14 +25,10 @@ BuildRequires:  rubygem(rspec)
 BuildRequires:  rubygem(mocha)
 %endif
 BuildRequires:  ruby-devel
-%if 0%{?el5}%{?el6}%{?fc16}
+%if 0%{?el5}%{?el6}
 Requires:       ruby(abi) = 1.8
 %else
-%if 0%{?fedora} >= 19
 Requires:       ruby(release)
-%else
-Requires:       ruby(abi) = 1.9.1
-%endif
 %endif
 
 %description
@@ -49,8 +45,8 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}%{ruby_vendorlibdir}
 mkdir -p %{buildroot}%{_sysconfdir}
 mkdir -p %{buildroot}%{_bindir}
-cp -pr lib/hiera %{buildroot}%{ruby_vendorlibdir} 
-cp -pr lib/hiera.rb %{buildroot}%{ruby_vendorlibdir} 
+cp -pr lib/hiera %{buildroot}%{ruby_vendorlibdir}
+cp -pr lib/hiera.rb %{buildroot}%{ruby_vendorlibdir}
 install -p -m0755 bin/hiera %{buildroot}%{_bindir}
 install -p -m0644 ext/hiera.yaml %{buildroot}%{_sysconfdir}
 mkdir -p %{buildroot}%{_var}/lib/hiera
