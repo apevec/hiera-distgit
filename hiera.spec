@@ -3,7 +3,8 @@
 %endif
 
 #rspec seems broken(?) in epel5 and6, todo.
-%if 0%{?el5}%{?el6} || 0%{?rhel} >= 7
+#rubygem(mocha) not available yet on el7.
+%if 0%{?el5}%{?el6}%{?el7}
 %global with_checks 0
 %else
 %global with_checks 1
@@ -11,7 +12,7 @@
 
 Name:           hiera
 Version:        1.3.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A simple hierarchical database supporting plugin data sources
 
 Group:          System Environment/Base
@@ -70,7 +71,7 @@ rm -rf %{buildroot}
 
 
 %changelog
-* Wed Feb 13 2014 Steve Traylen <steve.traylen@cern.ch> - 1.3.1-1
+* Thu Feb 13 2014 Steve Traylen <steve.traylen@cern.ch> - 1.3.1-2
 - New version 1.3.1
 
 * Mon Sep 16 2013 Steve Traylen <steve.traylen@cern.ch> - 1.2.1-1
