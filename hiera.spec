@@ -10,7 +10,7 @@
 %endif
 
 Name:           hiera
-Version:        1.2.1
+Version:        1.3.1
 Release:        1%{?dist}
 Summary:        A simple hierarchical database supporting plugin data sources
 
@@ -70,6 +70,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Wed Feb 13 2014 Steve Traylen <steve.traylen@cern.ch> - 1.3.1-1
+- New version 1.3.1
+
 * Mon Sep 16 2013 Steve Traylen <steve.traylen@cern.ch> - 1.2.1-1
 - New version 1.2.1
 
