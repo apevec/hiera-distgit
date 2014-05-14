@@ -11,8 +11,8 @@
 %endif
 
 Name:           hiera
-Version:        1.3.1
-Release:        2%{?dist}
+Version:        1.3.2
+Release:        1%{?dist}
 Summary:        A simple hierarchical database supporting plugin data sources
 
 Group:          System Environment/Base
@@ -71,6 +71,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Wed May 14 2014 Steve Traylen <steve.traylen@cern.ch> - 1.3.2-2
+- New version 1.3.2
+
 * Thu Feb 13 2014 Steve Traylen <steve.traylen@cern.ch> - 1.3.1-2
 - New version 1.3.1
 
