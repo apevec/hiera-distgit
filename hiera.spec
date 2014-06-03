@@ -11,8 +11,8 @@
 %endif
 
 Name:           hiera
-Version:        1.3.2
-Release:        2%{?dist}
+Version:        1.3.3
+Release:        1%{?dist}
 Summary:        A simple hierarchical database supporting plugin data sources
 
 Group:          System Environment/Base
@@ -26,10 +26,15 @@ BuildRequires:  rubygem(rspec)
 BuildRequires:  rubygem(mocha)
 %endif
 BuildRequires:  ruby-devel
-%if 0%{?el5}%{?el6}
+%if 0%{?el6}
 Requires:       ruby(abi) = 1.8
-%else
+%endif
+%if 0%{?fc19} || 0%{?fc20} || 0%{?el7}
 Requires:       ruby(release)
+%endif
+
+%if 0%{?fc19} || 0%{?fc20} || 0%{?el6} || 0%{?el7}
+Provides:       rubygem(hiera) = %{version}
 %endif
 
 %description
@@ -71,6 +76,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue Jun 3 2014 Steve Traylen <steve.traylen@cern.ch> - 1.3.3-1
+- New version 1.3.3, Update to latest ruby guidelines.
+
 * Wed May 14 2014 Steve Traylen <steve.traylen@cern.ch> - 1.3.2-2
 - Packaging error
 
