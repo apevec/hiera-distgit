@@ -11,7 +11,7 @@
 %endif
 
 Name:           hiera
-Version:        1.3.3
+Version:        1.3.4
 Release:        1%{?dist}
 Summary:        A simple hierarchical database supporting plugin data sources
 
@@ -76,6 +76,12 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Wed Jun 11 2014 Steve Traylen <steve.traylen@cern.ch> - 1.3.4-1
+- New version 1.3.4 
+
+* Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.3.3-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
+
 * Tue Jun 3 2014 Steve Traylen <steve.traylen@cern.ch> - 1.3.3-1
 - New version 1.3.3, Update to latest ruby guidelines.
 
