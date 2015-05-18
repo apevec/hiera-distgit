@@ -12,13 +12,14 @@
 
 Name:           hiera
 Version:        1.3.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A simple hierarchical database supporting plugin data sources
 
 Group:          System Environment/Base
 License:        ASL 2.0
 URL:            http://projects.puppetlabs.com/projects/%{name}/
 Source0:        http://downloads.puppetlabs.com/hiera/%{name}-%{version}.tar.gz
+Patch0:         0001-Fix-errors-with-Puppet-4.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 %if 0%{?with_checks}
@@ -42,6 +43,7 @@ A simple hierarchical database supporting plugin data sources.
 
 %prep
 %setup -q
+%patch0 -p1 -b .puppet4
 
 %build
 # Nothing to build
@@ -76,6 +78,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Mon May 18 2015 Haïkel Guémar <hguemar@fedoraproject.org> - 1.3.4-2
+- Fix errors with Puppet4 (patch from Lukas Bezdicka)
+
 * Wed Jun 11 2014 Steve Traylen <steve.traylen@cern.ch> - 1.3.4-1
 - New version 1.3.4 
 
