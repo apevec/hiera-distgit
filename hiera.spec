@@ -12,7 +12,7 @@
 
 Name:           hiera
 Version:        1.3.4
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A simple hierarchical database supporting plugin data sources
 
 Group:          System Environment/Base
@@ -78,6 +78,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Wed Jun 17 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.3.4-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
+
 * Mon May 18 2015 Haïkel Guémar <hguemar@fedoraproject.org> - 1.3.4-2
 - Fix errors with Puppet4 (patch from Lukas Bezdicka)
 
