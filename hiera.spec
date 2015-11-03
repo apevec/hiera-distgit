@@ -11,8 +11,8 @@
 %endif
 
 Name:           hiera
-Version:        1.3.4
-Release:        4%{?dist}
+Version:        3.0.1
+Release:        1%{?dist}
 Summary:        A simple hierarchical database supporting plugin data sources
 
 Group:          System Environment/Base
@@ -76,6 +76,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue Nov 3 2015 Steve Traylen <steve.traylen@cern.ch> - 3.0.1-1
+- New version 3.0.1
+
 * Thu Jul 30 2015 Gaël Chamoulaud <gchamoul@redhat.com> - 1.3.4-4
 - Removed 0001-Fix-errors-with-Puppet-4.patch
 
