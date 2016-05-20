@@ -11,7 +11,7 @@
 %endif
 
 Name:           hiera
-Version:        3.0.1
+Version:        3.1.2
 Release:        1%{?dist}
 Summary:        A simple hierarchical database supporting plugin data sources
 
@@ -76,6 +76,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Fri May 20 2016 Alan Pevec <alan.pevec@redhat.com> 3.1.2-1
+- Update to 3.1.2
+
 * Tue Nov 3 2015 Steve Traylen <steve.traylen@cern.ch> - 3.0.1-1
 - New version 3.0.1
 
